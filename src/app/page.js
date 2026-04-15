@@ -1,12 +1,9 @@
-import Image from "next/image";
+import HomePage from "./home/HomePage";
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="container mx-auto bg-slate-100 text-gray-500 shadow shadow-gray-200 font-bold text-5xl p-20 text-center">
-        Hello World! <br />
-        This is the start of Assignment 7...
-      </h1>
+    <div className="bg-[#F8FAFC] rounded-lg shadow">
+      <HomePage />
     </div>
   );
 }
