@@ -4,7 +4,6 @@ import Navbar from "@/components/shared/navbar/Navbar";
 import Footer from "@/components/shared/footer/Footer";
 import { Toaster } from "react-hot-toast";
 
-<Toaster position="top-right" />
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
