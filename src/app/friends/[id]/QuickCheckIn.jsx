@@ -1,9 +1,12 @@
 'use client';
 
-import { useState } from "react";
+import { TimelineContext } from "@/context/Provider";
+import { useContext } from "react";
+import { toast } from "react-toastify";
 
 export default function QuickCheckIn({ friendName }) {
-  const [timeline, setTimeline] = useState([]);
+
+  const { timeline, setTimeline } = useContext(TimelineContext);
 
   const handleCheckIn = (type) => {
     const newEntry = {
@@ -13,8 +16,11 @@ export default function QuickCheckIn({ friendName }) {
     };
 
     setTimeline((prev) => [newEntry, ...prev]);
-    alert(`${type} logged!`);
+    toast(`${type} logged!`);
   };
+
+  console.log(timeline, "Timeline");
+
 
   return (
     <div className="space-y-6">
@@ -27,24 +33,6 @@ export default function QuickCheckIn({ friendName }) {
           <button onClick={() => handleCheckIn('Text')} className="flex-1 py-2 bg-blue-100 text-blue-700 rounded-lg">💬 Text</button>
           <button onClick={() => handleCheckIn('Video')} className="flex-1 py-2 bg-purple-100 text-purple-700 rounded-lg">🎥 Video</button>
         </div>
-      </div>
-
-      {/* Timeline */}
-      <div className="bg-white p-5 rounded-xl shadow">
-        <h3 className="font-semibold mb-4">Timeline</h3>
-
-        {timeline.length === 0 ? (
-          <p className="text-sm text-gray-500">No interactions yet</p>
-        ) : (
-          <div className="space-y-3">
-            {timeline.map((item) => (
-              <div key={item.id} className="border-l-2 pl-3">
-                <p className="text-sm font-medium">{item.title}</p>
-                <p className="text-xs text-gray-400">{item.date}</p>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
 
     </div>

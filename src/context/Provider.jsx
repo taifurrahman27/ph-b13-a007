@@ -1,17 +1,15 @@
 "use client"
 
-
 import { createContext, useState } from "react";
 
-const context = createContext();
-const Provider = ({ children }) => {
-    const [state, setState] = useState();
-    const value = { state, setState };
+export const TimelineContext = createContext();
+const ContextProvider = ({ children }) => {
+    const [timeline, setTimeline] = useState([]);
     return (
-        <context.Provider value={value}>
+        <TimelineContext.Provider value={{ timeline, setTimeline }}>
             {children}
-        </context.Provider>
+        </TimelineContext.Provider>
     );
 };
 
-export default Provider;
+export default ContextProvider;
