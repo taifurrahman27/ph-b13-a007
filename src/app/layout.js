@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar/Navbar";
 import Footer from "@/components/shared/footer/Footer";
-import contextProvider from "@/context/Provider";
 import ContextProvider from "@/context/Provider";
 import { ToastContainer } from "react-toastify";
 

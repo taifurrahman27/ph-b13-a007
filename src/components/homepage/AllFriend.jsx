@@ -33,8 +33,6 @@ const AllFriend = () => {
                 {friends.map((friend) => (
 
                     <FriendCard key={friend.id} friend={friend} />
-
-
                 ))}
 
 

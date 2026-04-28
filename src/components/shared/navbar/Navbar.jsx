@@ -30,14 +30,12 @@ const Navbar = () => {
                     width="100"
                 />
 
-
                 <ul className="flex justify-between gap-4 rounded-xl items-center">
                     {navItems.map((item, index) => (
                         <MyLink key={index} href={item.path}>
                             {item.text}
                         </MyLink>
                     ))}
-
 
                 </ul>
 
