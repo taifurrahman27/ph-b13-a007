@@ -1,15 +1,15 @@
 import Image from "next/image";
 import QuickCheckIn from "./QuickCheckIn";
 const FriendDetailsPage = async ({ params }) => {
-  const res = await fetch('http://localhost:3000/friends.json');
-  const friends = await res.json();   
+  const res = await fetch(`https://ph-b13-a007.vercel.app//friends.json`);
+  const friends = await res.json();
   console.log(friends, "friens");
 
   const { id } = await params;
   console.log(id, "id");
   const friend = friends.find((f) => f.id == id);
   console.log(friend, "friend");
-  
+
 
   const getStatusStyle = (status) => {
     switch (status) {
