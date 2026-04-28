@@ -35,7 +35,6 @@ const AllFriend = () => {
                     <FriendCard key={friend.id} friend={friend} />
                 ))}
 
-
             </div>
         </div>
     );
